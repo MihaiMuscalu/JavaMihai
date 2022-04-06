@@ -3,21 +3,17 @@ import java.util.Scanner;
 public class Bankomat {
 
     public static void main(String[] args) {
-
+        int Balance = 0;
         boolean end = false;
+
+
         while (!end)
         {
-        int Balance = 0;
         Scanner scanner = new Scanner(System.in);
-
-
-
-            System.out.println("1. Einzahlen");
-            System.out.println("2. Abnehmen");
-            System.out.println("3. Kontostand");
-            System.out.println("4. Ende");
-
-
+        System.out.println("1. Einzahlen");
+        System.out.println("2. Abnehmen");
+        System.out.println("3. Kontostand");
+        System.out.println("4. Ende");
         int selection = scanner.nextInt();
 
         switch (selection) {
