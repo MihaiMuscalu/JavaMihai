@@ -5,15 +5,12 @@ public class Wuerfel {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-
-
-
         boolean end = false;
+        int tries = 6;
 
         System.out.println("1. Start Game");
         System.out.println("2. End Game");
         int selection = scanner.nextInt();
-        int tries = 6;
 
         while (!end)
         {

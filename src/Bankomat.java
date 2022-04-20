@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class Bankomat {
-
     public static void main(String[] args) {
         int Balance = 0;
         boolean end = false;
