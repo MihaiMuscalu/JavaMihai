@@ -4,19 +4,45 @@ import java.util.Scanner;
 
 public class Ceasar {
 
-    private static String Word;
     public static void main(String[] args) {
 
+        boolean end = false;
 
-        Scanner scanner= new Scanner(System.in);
-        System.out.println("Write a word:");
-        Word = scanner.next();
+        while (!end) {
 
+            //Menu
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("1.Encrypt Word");
+            System.out.println("2.Decrypt Word");
+            System.out.println("3.End Script");
+            int selection = scanner.nextInt();
+
+            //Chose Encrypt, Decrypt or end code
+            switch (selection) {
+                case 1:
+                    System.out.println("Write your word:");
+                    String Word = scanner.next();
+                    String encryptedWord = Encrypt(Word);
+                    System.out.printf("Your encrypted word is: %s%n", encryptedWord);
+                    break;
+                case 2:
+                    System.out.println("Write your word:");
+                    Word = scanner.next();
+                    String decryptedWord = Decrypt(Word);
+                    System.out.printf("Your decrypted word is: %s%n", decryptedWord);
+                    break;
+                default:
+                    System.out.println("Script ending.");
+                    end = true;
+                    break;
+            }
+
+        }
 
 
     }
 
-    public static void Encrypt (String a)
+    public static String Encrypt (String a)
     {
         //The Encrypt function takes the letters from a word and shifts them 2 places in the alphabet forwards
         //E.g. a to c; b to e; A to C; B to E
@@ -51,10 +77,10 @@ public class Ceasar {
         //convert character array back to String
         String decodedWord = new String(encodedWordSplit);
 
-        Word = decodedWord;
+        return  decodedWord;
     }
 
-    public static void Decrypt(String a) {
+    public static String Decrypt(String a) {
         //The Decrypt function takes the letters from a word and shifts them 2 places in the alphabet backwards
         //E.g. c to a; e to b; C to A; E to B
         //The Decrypt function is case-sensitive and will convert uppercase letters as uppercase.
@@ -84,7 +110,7 @@ public class Ceasar {
         }
         String decodedWord = new String(decodedWordSplit);
 
-        Word = decodedWord;
+        return decodedWord;
 
     }
 
