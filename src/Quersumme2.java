@@ -6,7 +6,7 @@ public class Quersumme2 {
             for (int i = 0; i < numbers.length; i++) {
                 numbers[i] = i;
 
-                //if the Sum of the character in a number is equal to 15: show the number
+
                 if(getSum(numbers[i]) % 7 == 0){
                     System.out.println(numbers[i]);
                 }
