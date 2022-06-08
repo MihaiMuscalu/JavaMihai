@@ -3,34 +3,32 @@ import java.util.Arrays;
 public class Quersumme3 {
 
     public static void main(String[] args) {
-        int[] numbers = new int[20];
-        int[] howOften = new int[20];
+        int[] numbers = new int[1000];
+        int[] howOften = new int[1000];
 
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = i;
 
             howOften[getSum(numbers[i])] += 1;
-            //Sort(howOften);
-            System.out.println(howOften[i]);
-
         }
+
+
+            System.out.println(Sort(howOften));
+
     }
-//    public static int[] Sort (int[] a)
-//    {
-//        int temp;
-//
-//        for (int i = 0; i < a.length; i++) {
-//            for (int j = i+1; j < a.length; j++) {
-//                if(a[i] > a[j])
-//                {
-//                    temp = a[i];
-//                    a[i] = a[j];
-//                    a[j] = temp;
-//                }
-//            }
-//        }
-//        return a;
-//    }
+
+    public static int Sort (int[] a)
+    {
+        int temp = 0;
+        for (int i = 0; i < a.length; i++)
+        {
+            if (temp < a[i])
+            {
+                temp =  i;
+            }
+        }
+     return temp;
+    }
 
 
     public static int getSum(int number) {
