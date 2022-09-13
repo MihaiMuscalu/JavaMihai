@@ -10,9 +10,6 @@ public class Quersumme1 {
                 System.out.println(numbers[i]);
             }
         }
-
-
-
     }
 
     public static int getSum(int number) {
