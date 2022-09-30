@@ -35,7 +35,7 @@ public class Car {
     public void honk(int Repetitions) {
 
         while (Repetitions > 0) {
-            Repetitions =-1;
+            Repetitions -= 1;
             System.out.println("tuut");
         }
     }
