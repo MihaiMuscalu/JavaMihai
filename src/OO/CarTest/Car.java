@@ -1,4 +1,4 @@
-package OO.Objects;
+package OO.CarTest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +7,7 @@ public class Car {
 
     private Engine engine;
     private List<RearMirror> mirrors;
+    private List<Wheel> wheels;
     private int fuelConsumption;
     private double fuelAmount;
     private String brand;
@@ -20,6 +21,7 @@ public class Car {
         this.brand = brand;
         this.serialNumber = serialNumber;
         this.mirrors = new ArrayList<>();
+        this.wheels = new ArrayList<>();
     }
 
     public void setFuelConsumption(int fuelConsumption) {
@@ -73,6 +75,10 @@ public class Car {
 
     public Engine getEngine() {
         return engine;
+    }
+
+    public List<Wheel> getWheels() {
+        return wheels;
     }
 
     public void drive(double speed) {
@@ -131,5 +137,9 @@ public class Car {
 
     public void addMirror(RearMirror rearMirror) {
         this.mirrors.add(rearMirror);
+    }
+
+    public void addWheel(Wheel wheel) {
+        this.wheels.add(wheel);
     }
 }

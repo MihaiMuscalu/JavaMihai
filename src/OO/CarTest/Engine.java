@@ -1,10 +1,8 @@
-package OO.Objects;
+package OO.CarTest;
 
 public class Engine {
 
-    public enum TYPE {DIESEL, GAS}
-
-    ;
+    public enum TYPE {DIESEL, GAS};
     private int horsepower;
     private TYPE type;
     private int Tank;

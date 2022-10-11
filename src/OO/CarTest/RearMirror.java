@@ -1,4 +1,4 @@
-package OO.Objects;
+package OO.CarTest;
 
 public class RearMirror {
 
