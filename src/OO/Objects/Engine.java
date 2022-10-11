@@ -2,18 +2,17 @@ package OO.Objects;
 
 public class Engine {
 
-    public enum TYPE {DIESEL, GAS};
+    public enum TYPE {DIESEL, GAS}
+
+    ;
     private int horsepower;
     private TYPE type;
+    private int Tank;
 
-    public Engine(int horsepower, TYPE type) {
+    public Engine(int Tank, int horsepower, TYPE type) {
         this.horsepower = horsepower;
         this.type = type;
-    }
-
-    public void drive(int amount)
-    {
-        System.out.println("the motoris running with" + amount);
+        this.Tank = Tank;
     }
 
     public int getHorsepower() {
@@ -22,5 +21,13 @@ public class Engine {
 
     public TYPE getType() {
         return type;
+    }
+
+    public void setTank(int tank) {
+        Tank = tank;
+    }
+
+    public int getTank() {
+        return Tank;
     }
 }

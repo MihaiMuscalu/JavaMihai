@@ -1,38 +1,38 @@
 package OO.Objects;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Car {
 
     private Engine engine;
+    private List<RearMirror> mirrors;
     private int fuelConsumption;
-    private int Tank;
-    private int fuelAmount;
+    private double fuelAmount;
     private String brand;
     private String serialNumber;
     private String color;
 
 
-    public Car(Engine engine, int fuelConsumption, int Tank, String brand, String serialNumber) {
+    public Car(Engine engine, int fuelConsumption, String brand, String serialNumber) {
         this.engine = engine;
         this.fuelConsumption = fuelConsumption;
         this.brand = brand;
         this.serialNumber = serialNumber;
-        this.Tank = Tank;
+        this.mirrors = new ArrayList<>();
     }
 
     public void setFuelConsumption(int fuelConsumption) {
-        if (fuelConsumption <= this.Tank) {
+        if (fuelConsumption <= engine.getTank()) {
             this.fuelConsumption = fuelConsumption;
-        } else this.fuelConsumption = this.Tank;
+        } else this.fuelConsumption = engine.getTank();
     }
 
-    public void setTank(int tank) {
-        Tank = tank;
-    }
 
     public void setFuelAmount(int fuelAmount) {
-        if (fuelAmount <= this.Tank) {
+        if (fuelAmount <= engine.getTank()) {
             this.fuelAmount = fuelAmount;
-        } else this.fuelAmount = this.Tank;
+        } else this.fuelAmount = engine.getTank();
     }
 
     public void setBrand(String brand) {
@@ -51,11 +51,11 @@ public class Car {
         return fuelConsumption;
     }
 
-    public int getTank() {
-        return Tank;
+    public List<RearMirror> getMirrors() {
+        return mirrors;
     }
 
-    public int getFuelAmount() {
+    public double getFuelAmount() {
         return fuelAmount;
     }
 
@@ -75,11 +75,19 @@ public class Car {
         return engine;
     }
 
-    public void Drive() {
+    public void drive(double speed) {
 
-        if (fuelAmount >= fuelConsumption) {
-            this.fuelAmount = this.fuelAmount - fuelConsumption;
-            System.out.println("I am driving!");
+        if (this.fuelAmount >= this.fuelConsumption) {
+            double distance = this.fuelConsumption * (speed / 100) * 100;
+            this.fuelAmount -= distance / 100;
+            System.out.println("I drove " + (int) distance + " kilometers");
+
+        } else {
+
+            double distance = this.fuelConsumption * (speed / 100);
+            this.fuelAmount = 0;
+            System.out.println("I drove " + (int) distance * 100 + " kilometers");
+
         }
 
     }
@@ -92,7 +100,7 @@ public class Car {
 
     public void TurboBoost() {
 
-        if (this.fuelAmount > Tank / 10) {
+        if (this.fuelAmount > engine.getTank() / 10) {
             System.out.println("SuperBoostMode!");
         } else System.out.println("Not enough fuel in tank to go Turbo!");
 
@@ -108,7 +116,7 @@ public class Car {
 
     public void getRemainingRange() {
 
-        int range = (fuelAmount / fuelConsumption) * 100;
+        double range = (fuelAmount / fuelConsumption) * 100;
 
         if (range > 1) {
             System.out.printf("You can drive %d more kilometers!", range);
@@ -119,5 +127,9 @@ public class Car {
         if (range < 1) {
             System.out.printf("You can't drive any more kilometers!");
         }
+    }
+
+    public void addMirror(RearMirror rearMirror) {
+        this.mirrors.add(rearMirror);
     }
 }
