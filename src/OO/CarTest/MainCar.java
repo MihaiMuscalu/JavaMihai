@@ -1,11 +1,6 @@
-package OO;
+package OO.CarTest;
 
-import OO.CarTest.Car;
-import OO.CarTest.Engine;
-import OO.CarTest.RearMirror;
-import OO.CarTest.Wheel;
-
-public class Main {
+public class MainCar {
     public static void main(String[] args) {
 
     Engine e1 = new Engine(70,140, Engine.TYPE.DIESEL);
