@@ -1,4 +1,4 @@
-package OO.Remote;
+package mihai.at.OO.Remote;
 
 public class Battery {
 

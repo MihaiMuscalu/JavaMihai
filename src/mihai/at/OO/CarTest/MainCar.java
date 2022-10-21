@@ -1,4 +1,4 @@
-package OO.CarTest;
+package mihai.at.OO.CarTest;
 
 public class MainCar {
     public static void main(String[] args) {

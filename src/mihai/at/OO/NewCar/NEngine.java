@@ -1,4 +1,4 @@
-package OO.NewCar;
+package mihai.at.OO.NewCar;
 
 public class NEngine {
     private enum TYPE {DIESEL, GAS}

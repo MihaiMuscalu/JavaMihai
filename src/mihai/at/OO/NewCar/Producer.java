@@ -1,4 +1,4 @@
-package OO.NewCar;
+package mihai.at.OO.NewCar;
 
 public class Producer {
     private String name;

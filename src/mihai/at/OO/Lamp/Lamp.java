@@ -1,4 +1,4 @@
-package OO.Lamp;
+package mihai.at.OO.Lamp;
 
 import java.util.ArrayList;
 import java.util.List;

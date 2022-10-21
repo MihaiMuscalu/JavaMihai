@@ -1,4 +1,4 @@
-package OO.Remote;
+package mihai.at.OO.Remote;
 
 import java.util.ArrayList;
 import java.util.List;

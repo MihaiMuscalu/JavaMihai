@@ -1,4 +1,4 @@
-package OO.Lamp;
+package mihai.at.OO.Lamp;
 
 public class Glowelement {
 
