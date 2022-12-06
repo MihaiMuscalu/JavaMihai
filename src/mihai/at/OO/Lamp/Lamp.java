@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Lamp {
-    private List<Glowelement> glowElements;
+    private List<Glowelement> glowElements = new ArrayList<>();
     private String name;
     private int powerConsumption;
     private boolean turnedOn;
