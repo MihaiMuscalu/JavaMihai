@@ -1,26 +1,24 @@
 package mihai.at.OO.Phone;
 
 public class Camera {
-    private enum AspectRatio {LANDSCAPE,PORTRAIT};
-    private AspectRatio aspectRatio;
-    private int Resolution;
 
-    public Camera(int resolution, AspectRatio aspectRatio) {
-        this.Resolution = resolution;
-        this.aspectRatio = aspectRatio;
+    private int Megapixels;
+    private int photoNR;
+
+    public Camera(int megapixels) {
+        this.Megapixels = megapixels;
+        this.photoNR = 0;
     }
 
-    public int getResolution() {
-        return Resolution;
+    public int getMegapixels() {
+        return Megapixels;
     }
 
-    public AspectRatio getAspectRatio() {
-        return aspectRatio;
-    }
-
-    public void makePicture()
+    public PhoneFile makePicture()
     {
-
+        photoNR +=1;
+        PhoneFile f1 = new PhoneFile(Integer.toString(photoNR),".jpg",Megapixels*4);
+        return f1;
     }
 }
 

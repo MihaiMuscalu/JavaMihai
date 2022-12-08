@@ -1,3 +1,5 @@
+package JavaBasics;
+
 import java.util.Random;
 
 public class IF_Aufgabe1 {

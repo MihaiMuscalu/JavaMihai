@@ -1,3 +1,5 @@
+package JavaBasics;
+
 public class Arrays {
     public static void main(String[] args) {
         int[] arrays = new int[3];

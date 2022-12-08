@@ -1,3 +1,5 @@
+package JavaBasics;
+
 public class Demo {
     static char[] alphabet = {'a', 'b', 'c'};
 

@@ -5,19 +5,23 @@ import java.util.List;
 public class MainPhone {
     public static void main(String[] args) {
         PhoneFile f1 = new PhoneFile("mihai", ".jpg", 2);
-        SDCard s1 = new SDCard(120);
+        SDCard sd1 = new SDCard(120);
+        Camera c1 = new Camera(3);
+        SIM s1 = new SIM(1,"0600123123123");
 
+        Phone p1 = new Phone("blue",sd1,c1,s1);
 
         //save file
-        s1.saveFile(f1);
-        System.out.println(s1.getAllFiles());
+        sd1.saveFile(f1);
+        System.out.println(sd1.getAllFiles());
+
+        c1.makePicture();
 
 
-        //get files name with a loop
-        List<PhoneFile> list = s1.getAllFiles();
-        for (PhoneFile file : list) {
-            System.out.println(file.getName() + file.getExtension() + "\nSize: " + file.getSize() + " MegaBytes");
-        }
+        p1.printAllFiles();
+
+
+
     }
 
 }

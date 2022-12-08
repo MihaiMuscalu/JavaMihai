@@ -27,4 +27,9 @@ public class PhoneFile {
     public void setName(String name) {
         this.name = name;
     }
+
+    public void getFileInformation()
+    {
+        System.out.println(this.getName() + this.getExtension() + "\nSize: " + this.getSize() + " MegaBytes");
+    }
 }
