@@ -18,4 +18,6 @@ public class SDCard {
     public List<Photo> getPhotos() {
         return photos;
     }
+
+
 }

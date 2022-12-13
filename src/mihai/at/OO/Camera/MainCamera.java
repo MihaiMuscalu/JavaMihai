@@ -12,6 +12,8 @@ public class MainCamera {
         c1.setLens(l1);
         c1.setProducer(p1);
         c1.setSdCard(s1);
-
+        c1.takePicture(Camera.TYPE.SMALL);
+        s1.getPhotos();
+        c1.printAllFiles();
     }
 }

@@ -1,5 +1,9 @@
 package mihai.at.OO.Camera;
 
+import mihai.at.OO.Phone.PhoneFile;
+
+import java.util.List;
+
 public class Camera {
     private int pixel;
     private int mass;
@@ -7,7 +11,7 @@ public class Camera {
     private SDCard sdCard;
     private Producer producer;
     private Lens lens;
-    private enum TYPE{SMALL,MEDIUM,BIG}
+    public enum TYPE{SMALL,MEDIUM,BIG}
     private TYPE type;
     private int photoNR = 0;
 
@@ -73,5 +77,12 @@ public class Camera {
                 break;
         }
         sdCard.getPhotos().add(result);
+    }
+
+    public void printAllFiles() {
+        List<Photo> photos = this.sdCard.getPhotos();
+        for (Photo photo : this.sdCard.getPhotos()) {
+            photo.getFileInfo();
+        }
     }
 }

@@ -21,4 +21,9 @@ public class Photo {
     public String getExtension() {
         return extension;
     }
+
+    public void getFileInfo()
+    {
+        System.out.println(this.getName() + this.getExtension() + "\nSize: " + this.getSize() + " GigaBytes");
+    }
 }
