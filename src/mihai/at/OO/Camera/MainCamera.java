@@ -3,7 +3,7 @@ package mihai.at.OO.Camera;
 public class MainCamera {
     public static void main(String[] args) {
 
-        Camera c1 = new Camera(1080,50,"blue");
+        Camera c1 = new Camera(50,"blue");
 
         Producer p1 = new Producer("Markus","Deutschland");
         Lens l1 = new Lens(p1,80);
