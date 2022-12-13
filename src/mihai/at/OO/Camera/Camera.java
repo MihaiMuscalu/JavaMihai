@@ -5,24 +5,21 @@ import mihai.at.OO.Phone.PhoneFile;
 import java.util.List;
 
 public class Camera {
-    private int pixel;
     private int mass;
     private String color;
     private SDCard sdCard;
     private Producer producer;
     private Lens lens;
-    public enum TYPE{SMALL,MEDIUM,BIG}
+
+    public enum TYPE {SMALL, MEDIUM, BIG}
+
     private TYPE type;
     private int photoNR = 0;
 
-    public Camera(int pixel, int mass, String color) {
-        this.pixel = pixel;
+    public Camera(int mass, String color) {
+
         this.mass = mass;
         this.color = color;
-    }
-
-    public int getPixel() {
-        return pixel;
     }
 
     public int getMass() {
@@ -61,21 +58,32 @@ public class Camera {
         this.type = type;
     }
 
-    public void takePicture(TYPE type)
-    {
+    public void takePicture(TYPE type) {
+
         Photo result = null;
-        photoNR +=1;
+        photoNR += 1;
+        if (sdCard == null) return;
         switch (type) {
             case SMALL:
-                result = new Photo(2,Integer.toString(photoNR),".jpg");
-                break;
+                if (sdCard.getFreeSpace() < 2) {
+                    System.out.println("No space available!");
+                    break;
+                }
+                result = new Photo(2, Integer.toString(photoNR), ".jpg");
             case MEDIUM:
-                result = new Photo(4,Integer.toString(photoNR),".jpg");
-                break;
+                if (sdCard.getFreeSpace() < 4) {
+                    System.out.println("No space available!");
+                    break;
+                }
+                result = new Photo(4, Integer.toString(photoNR), ".jpg");
             case BIG:
-                result = new Photo(6,Integer.toString(photoNR),".jpg");
-                break;
+                if (sdCard.getFreeSpace() < 6) {
+                    System.out.println("No space available!");
+                    break;
+                }
+                result = new Photo(6, Integer.toString(photoNR), ".jpg");
         }
+
         sdCard.getPhotos().add(result);
     }
 
