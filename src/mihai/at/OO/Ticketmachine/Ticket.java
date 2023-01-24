@@ -1,4 +1,5 @@
 package mihai.at.OO.Ticketmachine;
+
 import java.time.LocalDateTime;
 
 public class Ticket {
@@ -9,6 +10,7 @@ public class Ticket {
     public Ticket(int id) {
         this.id = id;
         this.inTime = java.time.LocalDateTime.now();
+        this.outTime = null;
     }
 
     public int getId() {
@@ -23,4 +25,7 @@ public class Ticket {
         return outTime;
     }
 
+    public void setOutTime(LocalDateTime outTime) {
+        this.outTime = outTime;
+    }
 }

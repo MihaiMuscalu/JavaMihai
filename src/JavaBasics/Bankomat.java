@@ -32,7 +32,7 @@ public class Bankomat {
                 System.out.println("Der Kontostand beträgt: " + Balance + " Euro");
                 break;
             case 4:
-                System.out.println("Machine ist stopping!");
+                System.out.println("TicketMachine ist stopping!");
                 end = true;
                 break;
             }
